@@ -1,15 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RestaurantApp</title>
+    <title>CafeteriaManagement</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%# <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
-
   <body>
-    <%= yield %>
+    <% if @current_user.present? %>
+      <div class="UserSessionBlock">
+        <span style="width: 1000px">
+          <span class="UserSession-name">
+            <%= @current_user.role.capitalize + " : " + @current_user.first_name.capitalize + " " + @current_user.last_name.capitalize %>
+          </span>
+          <%= link_to "Menu",
+                      menu_categories_path,
+                      class: "UsersForm-menubutton" %>
+          <%= link_to "Orders",
+                       orders_path,
+                       class: "UsersForm-cartbutton" %>
+          <% if @current_user.role == "owner" %>
+            <%= link_to " Sales ",
+                      reports_path,
+                      class: "UsersForm-cartbutton" %>
+            <%= link_to "Edit Menu",
+                        new_menu_item_path,
+                        method: "GET",
+                        class: "UsersForm-menubutton" %>
+            <%= link_to "Users List",
+                        users_path,
+                        class: "UsersForm-Submit" %>
+            <%= link_to "Add New User",
+                        new_user_path,
+                        class: "UsersForm-Submit" %>
+          <% end %>
+        </span>
+        <%= link_to "Sign out",
+                    destroy_session_path,
+                    class: "UsersForm-Submit",
+                    method: "DELETE" %>
+      </div>
+    <% end %>
+    <article style="margin-top:5%">
+      <% if flash[:error] %>
+        <p class="FlashMessage"><%= flash[:error] %></p>
+      <% end %>
+      <% if flash[:success] %>
+        <p class="SuccessMessage"><%= flash[:success] %></p>
+      <% end %>
+      <%= yield %>
+    </article>
   </body>
 </html>

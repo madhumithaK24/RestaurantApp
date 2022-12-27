@@ -1,0 +1,35 @@
+
+
+
+<section class="MenuCategoryPage" style= <%= @current_user.role == "owner" ? "width:90%;" : " " %>>
+    <p class = "MenuTitle">Menu Today</p>
+
+    <% if @current_user.role == "owner" %>
+        <%= render partial: "ownerpage", locals: {
+                     menu_categories: MenuCategory.all,
+                   } %>
+    <% else %>
+        <%= render partial: "customerclerk", locals: {
+                     menu_categories: MenuCategory.all,
+                   } %>
+    <% end %>
+
+
+</section>
+
+<% if @current_user.role != "owner" %>
+        <%= render partial: "cartsection", locals: {} %>
+<% end %>
+
+
+<script>
+                function toggler(sectionid) {
+                var x = document.getElementById(sectionid);
+                if (x.style.display === "none") {
+                x.style.display = "block";
+                } else {
+                x.style.display = "none";
+                }
+
+                }
+                </script>

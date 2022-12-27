@@ -1,0 +1,120 @@
+.MenuCategoryPage,
+.CartCategoryPage {
+  font-family: sans-serif;
+  margin: 2%;
+  padding: 3%;
+  line-height: 1;
+  width: 40%;
+  letter-spacing: 0.1px;
+  background-color: rgb(211, 221, 255);
+  box-shadow: 1px 10px 20px #aaaaaa;
+  border-radius: 20px;
+  display: inline-block;
+  float: left;
+}
+.UnavailableText {
+  padding: 1% 2%;
+  color: rgb(255, 52, 52);
+  border: 1px solid rgb(255, 52, 52);
+  border-radius: 20px;
+}
+.CartCategoryPage {
+  display: inline-block;
+  float: right;
+}
+.MenuCategory-Title {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(241, 238, 255);
+  box-shadow: 1px 10px 20px #aaaaaa;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(136, 123, 192);
+  border-radius: 20px;
+  padding: 2%;
+}
+.MenuCategory-Section {
+  margin: 3%;
+  padding: 2%;
+  background-color: rgb(240, 236, 255);
+  box-shadow: 1px 10px 20px #aaaaaa;
+  border-radius: 20px;
+}
+.MenuItem-header {
+  align-items: center;
+  border-bottom: solid 0.5px rgb(138, 75, 255);
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
+  padding: 2%;
+}
+
+.CartItem-section {
+  align-items: center;
+  margin: 1%;
+  padding: 1%;
+  background-color: rgb(240, 236, 255);
+  box-shadow: 1px 10px 20px #aaaaaa;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.CartSection {
+  font-size: 20px;
+  display: block;
+  justify-content: space-between;
+  padding: 3%;
+  margin: 2%;
+  box-shadow: 1px 10px 20px #aaaaaa;
+  border-radius: 20px;
+  background-color: lavender;
+}
+.CartQuantity {
+  padding: 1% 4%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: ivory;
+}
+.Cart-section {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: ivory;
+}
+.CartEmpty-section {
+  text-align: center;
+  padding: 5%;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: ivory;
+}
+.MenuTitle {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 3%;
+  color: dodgerblue;
+}
+.MenuItem-description {
+  font-size: 16px;
+  margin: 5%;
+}
+.MenuItem {
+  font-size: 18px;
+  margin: 2%;
+}
+.CartItem-section .MenuItem-price,
+.CartItem-section .MenuItem-title {
+  font-size: 18px;
+  display: flex;
+}
+.MenuItem-title,
+.MenuItem-price {
+  color: rgb(68, 59, 109);
+  margin: 0 5%;
+}
+.MenuItem-price {
+  color: rgb(21, 107, 0);
+}

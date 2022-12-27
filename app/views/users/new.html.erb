@@ -1,0 +1,49 @@
+<main class="UsersNewPage">
+	<div class="UsersNew-Title">Sign Up
+			<%= link_to "Home", "/",
+               class: "UsersForm-home" %>
+	</div>
+
+	<section class="UsersForm">
+		<%= form_with(url: users_path) do |form| %>
+
+			<% if @current_user.present? && @current_user.role == "owner" %>
+				<div class="UsersForm-section" style="align-items:baseline;">
+					<p>Role: </p>
+					<div style="display: flex; justify-contents: space-between;margin-right:15%; ">
+									<div><%= form.radio_button(:role,
+                                    "owner") %>
+																		Owner</div>
+									<div><%= form.radio_button(:role,
+                                    "clerk") %>
+																		Clerk</div>
+					</div>
+				</div>
+			<% end %>
+			<div class="UsersForm-section">
+				<p>	First Name:</p>
+				<%= form.text_field :first_name, required: true, class: "UsersForm-input", autofocus: true %>
+			</div>
+
+			<div class="UsersForm-section">
+				<p>Last Name:</p>
+				<%= form.text_field :last_name, class: "UsersForm-input" %>
+			</div>
+
+			<div class="UsersForm-section">
+					<p>Email:</p>
+			<%= form.email_field :email, required: true, class: "UsersForm-input" %>
+			</div>
+
+			<div class="UsersForm-section">
+				<p>Password:</p>
+				<%= form.password_field :password, required: true, class: "UsersForm-input" %>
+			</div>
+
+			<div class="UsersForm-section">
+				<%= form.submit "Sign Up", class: "UsersForm-Submit" %>
+			</div>
+		<% end %>
+	</section>
+
+</main>
